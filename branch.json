@@ -1,0 +1,102 @@
+{ "_index": "branches-development",
+  "_type": "branch",
+  "_id": 4,
+  "_version": 1,
+  "found": true,
+  "_source": {
+    "id": 4,
+    "name": "Fulham",
+    "slug": "Bloom",
+    "phone_number": "",
+    "created_at": "2014-09-11T17:48:52.002+01:00",
+    "updated_at": "2015-01-12T16:54:58.012+00:00",
+    "business_id": 4,
+    "sources": {
+      "opening_time_link": "",
+      "menu_link": "",
+      "website_link": "",
+      "tripadvisor_link": "",
+      "tripadvisor_rating": "",
+      "tripadvisor_number_of_reviews": "",
+      "zomato_link": "",
+      "zomato_rating": "",
+      "zomato_number_of_reviews": ""
+    },
+    "admin_description": "",
+    "alcohol": false,
+    "delivery": false,
+    "delivery_price": 4.99,
+    "commission_percentage": 0,
+    "disabled_by_branch": false,
+    "pickup_location_id": null,
+    "partner": false,
+    "restaurant_commission_percentage": 0,
+    "markup_percentage": null,
+    "markup_type": null,
+    "google_place_id": "ChIJdx0XW6APdkgRPz5eylXNTS0",
+    "preorder_type": null,
+    "preorderable_by": null,
+    "preorder_required": null,
+    "preorder_override_business": null,
+    "default_to_paid_by_hq": false,
+    "minimum_preparation_time": null,
+    "maximum_preparation_time": null,
+    "preorder_notes": null,
+    "takeaway_unavailable": null,
+    "average_preparation_time": null,
+    "cuisines": [
+      "Coffee",
+      "Bakery",
+      "British"
+    ],
+    "coordinates": {
+      "lat": 51.4745303,
+      "lon": -0.2136115
+    },
+    "business_name": "Bloom",
+    "opening_times": [
+      {
+        "day_of_week": "monday",
+        "opening": 830,
+        "closing": 2300,
+        "numeric_day_of_week": 0
+      },
+      {
+        "day_of_week": "tuesday",
+        "opening": 830,
+        "closing": 2300,
+        "numeric_day_of_week": 1
+      },
+      {
+        "day_of_week": "wednesday",
+        "opening": 830,
+        "closing": 2300,
+        "numeric_day_of_week": 2
+      },
+      {
+        "day_of_week": "thursday",
+        "opening": 830,
+        "closing": 2300,
+        "numeric_day_of_week": 3
+      },
+      {
+        "day_of_week": "friday",
+        "opening": 830,
+        "closing": 2300,
+        "numeric_day_of_week": 4
+      },
+      {
+        "day_of_week": "saturday",
+        "opening": 900,
+        "closing": 2300,
+        "numeric_day_of_week": 5
+      },
+      {
+        "day_of_week": "sunday",
+        "opening": 900,
+        "closing": 2300,
+        "numeric_day_of_week": 6
+      }
+    ]
+  }
+}
