@@ -1,0 +1,55 @@
+curl -XGET localhost:9200/branches-development/branch/_search -d '{ 
+  "query" : { "match": {"name": "Fulham"}}, 
+  "filter" : { "and" : [{"term" : { "cuisines" : "Coffee"}},{ "term" : { "cuisines" : "British"}}]
+  }
+}'
+
+
+curl -XGET localhost:9200/branches-development/branch/_search -d '{  
+  "filter" : {
+  	"nested" : {
+                "path" : "branch",
+                "filter" : {
+                    "bool" : {
+                        "must" : [
+                            {
+                                "term" : {"branch.cuisines" : "Coffee"}
+                            },
+                            {
+                                "range" : {"branch.cuisines" : "British"}
+                            }
+                        ]
+                    }
+                }	    
+}'
+
+
+
+curl -XGET localhost:9200/branches-development/branch/_search -d '{  
+  "query" : { "match": {"name": "Fulham"}}
+}'
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>> TEST >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+ "match": {"name": "Fulham"},
+
+curl -XGET localhost:9200/branches-development/branch/_search -d '{
+   "filter" : {"geo_distance" : {
+    "distance" : "200km",
+      "coordinates" : {"lat" : 40.00, "lon" : -70.00}
+    }}
+}'
+
+
+curl -XGET localhost:9200/branches-development/branch/_search -d '
+{"filter":{"geo_distance":{"distance":"200km"}}}'
+
+
+curl -XGET localhost:9200/branches-development/_search -d '{
+  "query" : {"match_all" : {}},
+  "filter" : {"branch.coordinates" : {"lat" : 40,"lon" : -70}}   
+}'
+
+
+curl -XGET 'http://localhost:9200/branches-development/branch/4?_source=false'	

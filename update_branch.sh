@@ -11,7 +11,8 @@ curl -XPUT $SERVER_URL/branches-development/ -d '{
             "type" : "string"
           },
           "coordinates" : {
-            "type" : "geo_point"
+            "type" : "geo_point",
+            "lat_lon": true
           },
           "cuisines" : {
             "type" : "string"
