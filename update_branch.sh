@@ -1,8 +1,9 @@
 SERVER_URL="http://localhost:9200"
+curl -XDELETE $SERVER_URL/branches-development/
 
+ 
 echo "creating new index branches-development \n"
 curl -XPUT $SERVER_URL/branches-development/ -d '{ 
-    "branches-development" : {
     "mappings" : {
       "branch" : {
         "dynamic" : "false",
@@ -11,25 +12,12 @@ curl -XPUT $SERVER_URL/branches-development/ -d '{
             "type" : "string"
           },
           "coordinates" : {
-            "type" : "geo_point",
-            "lat_lon": true
+            "type" : "geo_point"
           },
           "cuisines" : {
             "type" : "string"
-          },
-          "opening_times" : {
-            "type" : "nested",
-            "properties" : {
-              "closing" : {
-                "type" : "integer"
-              },
-              "opening" : {
-                "type" : "integer"
-              }
-            }
-          }
+          }       
         }
       }
-    }
-  }
+    }  
 }'

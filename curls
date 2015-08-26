@@ -24,6 +24,24 @@ curl -XGET localhost:9200/branches-development/branch/_search -d '{
 }'
 
 
+curl -XGET localhost:9200/branches-development/branch/_query -d '{
+   "filtered" : {
+        "query" : {
+            "match_all" : {}
+        },
+        "filter" : {
+            "geo_distance" : {
+                "distance" : "200km",
+                "pin.location" : {
+                    "lat" : 40,
+                    "lon" : -70
+                }
+            }
+        }
+    }
+}'
+
+
 
 curl -XGET localhost:9200/branches-development/branch/_search -d '{  
   "query" : { "match": {"name": "Fulham"}}
